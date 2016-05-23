@@ -11,7 +11,6 @@ package doolhof;
 public enum Spelstatus {
     
     GESTART,
-    GESTOPT,
-    GEPAUZEERD;
+    GESTOPT
     
 }
