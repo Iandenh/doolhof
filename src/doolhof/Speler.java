@@ -36,16 +36,16 @@ public class Speler extends SpelItem implements KeyListener {
 	switch (keycode) {
 	    
 		case KeyEvent.VK_UP:
-		    beweeg(Richting.NOORD);
+		    beweeg(Richting.OMHOOG);
 		    break;
 		case KeyEvent.VK_DOWN:
-		    beweeg(Richting.ZUID);
+		    beweeg(Richting.OMLAAG);
 		    break;
 		case KeyEvent.VK_LEFT:
-		    beweeg(Richting.WEST);
+		    beweeg(Richting.LINKS);
 		    break;
 		case KeyEvent.VK_RIGHT:
-		    beweeg(Richting.OOST);
+		    beweeg(Richting.RECHTS);
 		    break;
 	}
 	
