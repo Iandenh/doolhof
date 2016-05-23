@@ -56,7 +56,6 @@ public abstract class SpelItem {
     
     //verplaatst een spelelement
     protected void beweeg(Richting richting) {
-        System.out.println(richting);
 	Veld buur = veld.getBuur(richting);
         System.out.println(buur);
 	    if (!(buur.getSpelItem() instanceof Muur)) {
