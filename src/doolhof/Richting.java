@@ -11,8 +11,8 @@ package doolhof;
  */
 public enum Richting {
 
-    NOORD,
-    OOST,
-    ZUID,
-    WEST;
+    OMHOOG,
+    RECHTS,
+    OMLAAG,
+    LINKS;
 }
