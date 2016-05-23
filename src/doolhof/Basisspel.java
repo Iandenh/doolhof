@@ -60,19 +60,19 @@ public class Basisspel extends javax.swing.JPanel implements SpelListener{
             int links = i - 1;
             
             if(indexExists(speelVeld, boven)){
-                veld.setBuur(Richting.NOORD, speelVeld.get(boven));
+                veld.setBuur(Richting.OMHOOG, speelVeld.get(boven));
             }
             if(indexExists(speelVeld, onder)){
-                veld.setBuur(Richting.ZUID, speelVeld.get(onder));
+                veld.setBuur(Richting.OMLAAG, speelVeld.get(onder));
             }
             
             if(indexExists(speelVeld, rechts)){
                 System.out.println("rechst okay");
-                veld.setBuur(Richting.OOST, speelVeld.get(rechts));
+                veld.setBuur(Richting.RECHTS, speelVeld.get(rechts));
             }
             
             if(indexExists(speelVeld, links)){
-                veld.setBuur(Richting.WEST, speelVeld.get(links));
+                veld.setBuur(Richting.LINKS, speelVeld.get(links));
             }
         }
         addKeyListener(getSpeler());
