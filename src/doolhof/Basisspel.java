@@ -5,6 +5,9 @@
  */
 package doolhof;
 
+import doolhof.Item.Bazooka;
+import doolhof.Item.Speler;
+import doolhof.Item.Muur;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +29,9 @@ public class Basisspel extends javax.swing.JPanel implements SpelListener{
     public Basisspel() {
         initComponents();
     }
-    
+    public void reset(){
+        speelVeld.clear();
+    }
     public void BouwSpelveld(String[][] layout)
     {
         
@@ -43,6 +48,12 @@ public class Basisspel extends javax.swing.JPanel implements SpelListener{
                 {
                     Speler speler = new Speler(veld, this);
                     veld.setSpelelement(speler);
+                }
+                
+                if("b".equals(layout[i][j]))
+                {
+                    Bazooka wapen = new Bazooka(veld, this);
+                    veld.setSpelelement(wapen);
                 }
                 
                 
@@ -67,7 +78,6 @@ public class Basisspel extends javax.swing.JPanel implements SpelListener{
             }
             
             if(indexExists(speelVeld, rechts)){
-                System.out.println("rechst okay");
                 veld.setBuur(Richting.RECHTS, speelVeld.get(rechts));
             }
             

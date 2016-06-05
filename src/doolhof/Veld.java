@@ -5,6 +5,7 @@
  */
 package doolhof;
 
+import doolhof.Item.SpelItem;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.EnumMap;

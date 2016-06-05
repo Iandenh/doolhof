@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package doolhof;
+package doolhof.Item;
 
+import doolhof.Richting;
+import doolhof.SpelListener;
+import doolhof.Veld;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -21,6 +24,7 @@ public abstract class SpelItem {
     protected Veld veld;
     private BufferedImage plaatje;
     protected SpelListener listener;
+    protected Bazooka wapen;
         
     protected SpelItem(Veld veld, SpelListener listener) {
 	
@@ -58,6 +62,9 @@ public abstract class SpelItem {
     protected void beweeg(Richting richting) {
 	Veld buur = veld.getBuur(richting);
         System.out.println(buur);
+            if(buur.getSpelItem() instanceof Bazooka){
+                wapen = (Bazooka) buur.getSpelItem();
+            }
 	    if (!(buur.getSpelItem() instanceof Muur)) {
                 this.veld.setSpelelement(null);
                 buur.setSpelelement(this);

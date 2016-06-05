@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package doolhof;
+package doolhof.Item;
 
+import doolhof.Richting;
+import doolhof.SpelListener;
+import doolhof.Veld;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -13,6 +16,7 @@ import java.awt.event.KeyListener;
  * @author Ian
  */
 public class Speler extends SpelItem implements KeyListener {
+    
     
     public Speler(Veld veld, SpelListener listener) {
 	super(veld, listener);
@@ -47,7 +51,18 @@ public class Speler extends SpelItem implements KeyListener {
 		case KeyEvent.VK_RIGHT:
 		    beweeg(Richting.RECHTS);
 		    break;
+                    
+		case KeyEvent.VK_SPACE:
+		    schiet(Richting.RECHTS);
+		    break;
 	}
 	
+    }
+    
+    public void schiet(Richting richting){
+        Veld buur = veld.getBuur(richting);
+        if ((buur.getSpelItem() instanceof Muur)) {
+                buur.setSpelelement(null);
+	    }
     }
 }
