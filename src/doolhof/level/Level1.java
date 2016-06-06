@@ -16,7 +16,7 @@ public class Level1 extends Level{
         {"m",null,"m","m",null,null,"m",null,null,null,null,null,null,null,null,null,null,null,null,"m"},
         {"m","b","m",null,null,null,null,"m",null,null,null,null,null,null,null,null,null,null,null,"m"},
         {"m",null,"m",null,null,null,null,"m",null,null,null,null,null,null,null,null,null,null,null,"m"},
-        {"m",null,null,null,null,null,"m",null,null,null,null,null,"m",null,null,null,null,null,null,"m"},
+        {"m","h",null,null,null,null,"m",null,null,null,null,null,"m",null,null,null,null,null,null,"m"},
         {"m",null,"m",null,"m",null,null,null,null,null,null,null,null,null,null,null,null,null,null,"m"},
         {"m",null,"m",null,"m",null,null,null,null,null,null,null,null,null,null,null,null,null,null,"m"},
         {"m",null,"m",null,"m",null,null,null,null,null,null,null,null,null,null,null,null,null,null,"m"},
@@ -24,7 +24,7 @@ public class Level1 extends Level{
         {"m",null,"m",null,"m","m",null,null,null,null,null,null,null,null,null,null,null,null,null,"m"},
         {"m",null,"m",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"m"},
         {"m",null,"m","m","m",null,null,null,null,null,null,null,null,null,null,null,null,null,null,"m"},
-        {"m",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"m"},
+        {"m",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"f","m"},
         {"m","m","m","m","m","m","m","m","m","m","m","m","m","m","m","m","m","m","m","m"},
         };
         this.level = level;

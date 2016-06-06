@@ -16,53 +16,57 @@ import java.awt.event.KeyListener;
  * @author Ian
  */
 public class Speler extends SpelItem implements KeyListener {
-    
-    
+
     public Speler(Veld veld, SpelListener listener) {
-	super(veld, listener);
-	super.setPlaatje(this);
-	
+        super(veld, listener);
+        super.setPlaatje(this);
+
     }
+
     @Override
     public void keyTyped(KeyEvent e) {
-	
+
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-	//
+        //
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         int keycode = e.getKeyCode();
         System.out.println(e);
-	switch (keycode) {
-	    
-		case KeyEvent.VK_UP:
-		    beweeg(Richting.OMHOOG);
-		    break;
-		case KeyEvent.VK_DOWN:
-		    beweeg(Richting.OMLAAG);
-		    break;
-		case KeyEvent.VK_LEFT:
-		    beweeg(Richting.LINKS);
-		    break;
-		case KeyEvent.VK_RIGHT:
-		    beweeg(Richting.RECHTS);
-		    break;
-                    
-		case KeyEvent.VK_SPACE:
-		    schiet(Richting.RECHTS);
-		    break;
-	}
-	
+        switch (keycode) {
+
+            case KeyEvent.VK_UP:
+                beweeg(Richting.OMHOOG);
+                break;
+            case KeyEvent.VK_DOWN:
+                beweeg(Richting.OMLAAG);
+                break;
+            case KeyEvent.VK_LEFT:
+                beweeg(Richting.LINKS);
+                break;
+            case KeyEvent.VK_RIGHT:
+                beweeg(Richting.RECHTS);
+                break;
+
+            case KeyEvent.VK_D:
+                schiet(Richting.RECHTS);
+                break;
+            case KeyEvent.VK_S:
+                schiet(Richting.OMLAAG);
+                break;
+            case KeyEvent.VK_A:
+                schiet(Richting.LINKS);
+                break;
+            case KeyEvent.VK_W:
+                schiet(Richting.OMHOOG);
+                break;
+        }
+
     }
-    
-    public void schiet(Richting richting){
-        Veld buur = veld.getBuur(richting);
-        if ((buur.getSpelItem() instanceof Muur)) {
-                buur.setSpelelement(null);
-	    }
-    }
+
+   
 }

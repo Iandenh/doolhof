@@ -7,13 +7,15 @@ package doolhof;
 
 import doolhof.level.Level;
 import doolhof.level.Level1;
+import doolhof.level.Level2;
+import doolhof.level.Level3;
 
 /**
  *
  * @author Ian
  */
 public class Doolhof extends javax.swing.JFrame {
-
+    protected static int stappen;
     /**
      * Creates new form Doolhof
      */
@@ -33,7 +35,6 @@ public class Doolhof extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         basisspel1 = new doolhof.Basisspel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,14 +51,12 @@ public class Doolhof extends javax.swing.JFrame {
         basisspel1.setLayout(basisspel1Layout);
         basisspel1Layout.setHorizontalGroup(
             basisspel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 686, Short.MAX_VALUE)
+            .addGap(0, 729, Short.MAX_VALUE)
         );
         basisspel1Layout.setVerticalGroup(
             basisspel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 487, Short.MAX_VALUE)
         );
-
-        jLabel2.setText("Aantal stappen:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,15 +68,10 @@ public class Doolhof extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(basisspel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(19, 19, 19))))
+                .addComponent(basisspel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,20 +85,19 @@ public class Doolhof extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(basisspel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Level1 level = new Level1();
+        Level level = new Level3();
         String[][] layout = level.getLevel();
         this.basisspel1.reset();
         this.basisspel1.BouwSpelveld(layout);
         this.basisspel1.requestFocus();
+        this.jButton1.setText("restart");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -146,6 +139,5 @@ public class Doolhof extends javax.swing.JFrame {
     private doolhof.Basisspel basisspel1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

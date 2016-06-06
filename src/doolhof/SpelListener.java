@@ -15,4 +15,8 @@ public interface SpelListener {
  public Spelstatus getSpelstatus();
  
  public void setSpelstatus(Spelstatus spelstatus); 
+ 
+ public void enableHelper();
+ 
+ public void addStap();
 }
