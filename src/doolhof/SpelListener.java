@@ -19,4 +19,6 @@ public interface SpelListener {
  public void enableHelper();
  
  public void addStap();
+ 
+  public void addStap(int stappen);
 }

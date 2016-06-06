@@ -6,6 +6,7 @@
 package doolhof;
 
 import doolhof.Item.Bazooka;
+import doolhof.Item.Cheater;
 import doolhof.Item.Finish;
 import doolhof.Item.Helper;
 import doolhof.Item.Speler;
@@ -68,6 +69,12 @@ public class Basisspel extends javax.swing.JPanel implements SpelListener {
                 if ("h".equals(layout[i][j])) {
                     Helper helper = new Helper(veld, this);
                     veld.setSpelelement(helper);
+                }
+                
+                if ("c".equals(layout[i][j])) {
+                    int random = (int) ((double)Math.random()*40);
+                    Cheater cheater = new Cheater(veld, this, random);
+                    veld.setSpelelement(cheater);
                 }
 
                 speelVeld.add(veld);
@@ -196,5 +203,14 @@ public class Basisspel extends javax.swing.JPanel implements SpelListener {
     @Override
     public void addStap() {
         stappen++;
+    }
+    
+    @Override
+    public void addStap(int stappen) {
+        this.stappen = this.stappen+stappen;
+        if(this.stappen < 0)
+        {
+            this.stappen = 0;
+        }
     }
 }

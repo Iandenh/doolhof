@@ -72,6 +72,11 @@ public class SpelItem {
         if(buur.getSpelItem() instanceof Helper){
            listener.enableHelper();
         }
+        if(buur.getSpelItem() instanceof Cheater){
+           Cheater cheater = (Cheater) buur.getSpelItem();
+           int stappen =  cheater.getStappen();
+           listener.addStap(-stappen);
+        }
         if (!(buur.getSpelItem() instanceof Muur)) {
             this.veld.setSpelelement(null);
             buur.setSpelelement(this);
