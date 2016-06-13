@@ -5,6 +5,7 @@
  */
 package doolhof.Item;
 
+import doolhof.Doolhof;
 import doolhof.Richting;
 import doolhof.SpelListener;
 import doolhof.Veld;
@@ -77,12 +78,17 @@ public class SpelItem {
            int stappen =  cheater.getStappen();
            listener.addStap(-stappen);
         }
+        
+        if ((buur.getSpelItem() instanceof Finish)) {
+            Doolhof.nextLevel();
+        }
         if (!(buur.getSpelItem() instanceof Muur)) {
             this.veld.setSpelelement(null);
             buur.setSpelelement(this);
             this.setHokje(buur);
             listener.addStap();
         }
+        
 
         listener.repaint();
 

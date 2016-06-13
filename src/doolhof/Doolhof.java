@@ -9,6 +9,7 @@ import doolhof.level.Level;
 import doolhof.level.Level1;
 import doolhof.level.Level2;
 import doolhof.level.Level3;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,13 +17,24 @@ import doolhof.level.Level3;
  */
 public class Doolhof extends javax.swing.JFrame {
     protected static int stappen;
+    private ArrayList<Level> levels;
+    private static int CurrentLevel = 0;
+    private static Doolhof instance;
     /**
      * Creates new form Doolhof
      */
     public Doolhof() {
         initComponents();
+        instance = this;
+        levels = new ArrayList<Level>();
+        levels.add(new Level1());
+        levels.add(new Level2());
+        levels.add(new Level3());
     }
 
+    public static Doolhof getInstance(){
+        return instance;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -91,12 +103,20 @@ public class Doolhof extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Level level = new Level3();
+    public static void nextLevel()
+    {
+        CurrentLevel++;
+        getInstance().loadLevel(getInstance().levels.get(CurrentLevel));
+    }
+    private void loadLevel(Level level){
         String[][] layout = level.getLevel();
         this.basisspel1.reset();
         this.basisspel1.BouwSpelveld(layout);
         this.basisspel1.requestFocus();
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Level level = levels.get(CurrentLevel);
+        loadLevel(level);
         this.jButton1.setText("restart");
     }//GEN-LAST:event_jButton1ActionPerformed
 

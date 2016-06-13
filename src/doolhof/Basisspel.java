@@ -37,11 +37,18 @@ public class Basisspel extends javax.swing.JPanel implements SpelListener {
         initComponents();
     }
 
+     /**
+     * Reset het spel
+     */
     public void reset() {
+        removeKeyListener(getSpeler());
         speelVeld.clear();
         stappen = 0;
     }
 
+    /**
+     * bouwt het spel op
+     */
     public void BouwSpelveld(String[][] layout) {
 
         for (int i = 0; i < HOOGTE; i++) {
