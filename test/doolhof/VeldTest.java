@@ -102,12 +102,10 @@ public class VeldTest {
     @Test
     public void testGetxPos() {
         System.out.println("getxPos");
-        Veld instance = null;
-        int expResult = 0;
+        Veld instance = new Veld(2, 3);
+        int expResult = 60;
         int result = instance.getxPos();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
