@@ -168,7 +168,15 @@ public class Basisspel extends javax.swing.JPanel implements SpelListener {
         }
         return null;
     }
-
+    
+    public Veld getSpelerVeld() {
+        for (Veld veld : speelVeld) {
+            if (veld.getSpelItem() instanceof Speler) {
+                return  veld;
+            }
+        }
+        return null;
+    }
     private Veld getHelper() {
         for (Veld veld : speelVeld) {
             if (veld.getSpelItem() instanceof Helper) {

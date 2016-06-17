@@ -16,8 +16,8 @@ import org.junit.runners.Suite;
  *
  * @author Ian
  */
-@RunWith(Suite.class)
-@Suite.SuiteClasses({})
+@org.junit.runner.RunWith(org.junit.runners.Suite.class)
+@org.junit.runners.Suite.SuiteClasses({})
 public class ImgSuite {
 
     @BeforeClass

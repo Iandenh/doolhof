@@ -16,8 +16,8 @@ import org.junit.runners.Suite;
  *
  * @author Ian
  */
-@RunWith(Suite.class)
-@Suite.SuiteClasses({doolhof.level.Level2Test.class, doolhof.level.Level3Test.class, doolhof.level.LevelTest.class, doolhof.level.Level1Test.class})
+@   org.junit.runner.RunWith(org.junit.runners.Suite.class)
+@   org.junit.runners.Suite.SuiteClasses({Level2Test.class, Level3Test.class, LevelTest.class, Level1Test.class})
 public class LevelSuite {
 
     @BeforeClass

@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import doolhof.DoolhofSuite;
+import img.ImgSuite;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,8 +17,8 @@ import org.junit.runners.Suite;
  *
  * @author Ian
  */
-@RunWith(Suite.class)
-@Suite.SuiteClasses({doolhof.DoolhofSuite.class, img.ImgSuite.class})
+@org.junit.runner.RunWith(org.junit.runners.Suite.class)
+@org.junit.runners.Suite.SuiteClasses({DoolhofSuite.class, ImgSuite.class})
 public class RootSuite {
 
     @BeforeClass

@@ -28,6 +28,10 @@ public class SpelItem {
     protected SpelListener listener;
     protected Bazooka wapen;
 
+    public void setWapen(Bazooka wapen) {
+        this.wapen = wapen;
+    }
+
     public SpelItem(Veld veld, SpelListener listener) {
 
         this.veld = veld;

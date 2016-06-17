@@ -69,7 +69,7 @@ public class Speler extends SpelItem implements KeyListener {
 
     }
     
-     protected void beweeg(Richting richting) {
+     public void beweeg(Richting richting) {
         Veld buur = veld.getBuur(richting);
         System.out.println(buur);
         if (buur.getSpelItem() instanceof Bazooka) {

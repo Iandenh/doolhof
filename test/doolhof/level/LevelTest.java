@@ -53,5 +53,11 @@ public class LevelTest {
 
     public class LevelImpl extends Level {
     }
+
+    public class LevelImpl extends Level {
+    }
+
+    public class LevelImpl extends Level {
+    }
     
 }
