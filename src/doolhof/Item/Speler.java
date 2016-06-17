@@ -5,6 +5,7 @@
  */
 package doolhof.Item;
 
+import doolhof.Doolhof;
 import doolhof.Richting;
 import doolhof.SpelListener;
 import doolhof.Veld;
@@ -66,6 +67,55 @@ public class Speler extends SpelItem implements KeyListener {
                 break;
         }
 
+    }
+    
+     protected void beweeg(Richting richting) {
+        Veld buur = veld.getBuur(richting);
+        System.out.println(buur);
+        if (buur.getSpelItem() instanceof Bazooka) {
+            wapen = (Bazooka) buur.getSpelItem();
+        }
+        
+        if(buur.getSpelItem() instanceof Helper){
+           listener.enableHelper();
+        }
+        if(buur.getSpelItem() instanceof Cheater){
+           Cheater cheater = (Cheater) buur.getSpelItem();
+           int stappen =  cheater.getStappen();
+           listener.addStap(-stappen);
+        }
+        
+        if ((buur.getSpelItem() instanceof Finish)) {
+            Doolhof.nextLevel();
+        }
+        if (!(buur.getSpelItem() instanceof Muur)) {
+            this.veld.setSpelelement(null);
+            buur.setSpelelement(this);
+            this.setHokje(buur);
+            listener.addStap();
+        }
+        
+
+        listener.repaint();
+
+    }
+    
+     public void schiet(Richting richting) {
+        if (wapen != null) {
+
+            Veld buur = veld.getBuur(richting);
+            while (true) {
+
+                if (buur.getSpelItem() != null && (buur.getSpelItem() instanceof Muur)) {
+                    buur.setSpelelement(null);
+                    wapen = null;
+                    listener.repaint();
+                    break;
+                }
+                buur = buur.getBuur(richting);
+            }
+
+        }
     }
 
    
