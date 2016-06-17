@@ -28,6 +28,10 @@ public class Basisspel extends javax.swing.JPanel implements SpelListener {
     private ArrayList<Veld> helperPath = new ArrayList<>();
     private Spelstatus spelstatus;
     private boolean helper = false;
+
+    public ArrayList<Veld> getHelperPath() {
+        return helperPath;
+    }
     private int stappen = 0;
 
     /**

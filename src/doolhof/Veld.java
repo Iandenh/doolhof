@@ -102,11 +102,12 @@ public class Veld {
         if (this.getSpelItem() != null && this.getSpelItem() instanceof Muur) {
             return null;
         }
+        
+        System.out.println((xPos / 30) + " " + (yPos / 30));
+        path.add(this);
         if (this.getSpelItem() != null && this.getSpelItem() instanceof Finish) {
             return path;
         }
-        System.out.println((xPos / 30) + " " + (yPos / 30));
-        path.add(this);
         Veld buur;
         for (Richting richting : Richting.values()) {
             buur = this.getBuur(richting);
